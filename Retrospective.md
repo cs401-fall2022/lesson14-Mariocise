@@ -1,7 +1,7 @@
 # Retrospective
 
-- name: Jane Doe
-- email: janedoe@u.boisestate.edu
+- name: Sam Humrichouse
+- email: samhumrichouse@u.boisestate.edu
 
 ## Instructions
 
@@ -21,12 +21,13 @@ Be safe CITE!
 
 ## Experience
 
-TODO
+The main challenge was learning about TypeScript and how it is related 
+to JavaScript. After that, creating an outline was straightforward.
 
 ## Known issues or Bugs
 
-TODO
+NONE
 
 ## Sources used
 
-TODO
+www.typescriptlang.org (mostly the pages linked in the assignment description)
