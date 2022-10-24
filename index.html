@@ -9,10 +9,13 @@
 
 <body>
     <h1>TypeScript Tutorial</h1>
-    <p>intro stuff</p>
-    <h2>Types in JavaScript</h2>
-    <h2>How TypeScript is Related to JavaScript</h2>
+    <p>TypeScript is a language that adds static typing to JavaScript, designed to make code more predictable and therefore easier to debug.</p>
 
+    <h2>Types in JavaScript</h2>
+    <p>JavaScript is a dynamically typed language, meaning variables' types can change. This grants a lot of flexibility, but can lead to some problems. For example, <code>function foo(x) { return (1 + x); }</code> behaves differently depending on x's type. If x is a number, foo will return an number. If x is a string, foo will return a string. This flexibility can be useful, but also can become unpredictable, especially in a large code base.</p>
+
+    <h2>How TypeScript is Related to JavaScript</h2>
+    <p>TypeScript is a strongly typed language that builds on JavaScript and compiles to JavaScript. The code to add function to the button below was written in TypeScript, but was compiled to JavaScript so that any browser compatible with JavaScript can run it. </p>
     <button id="helloworld" onclick="dispHelloW()">Click me</button>
     <script type="module">
         import {dispHelloW} from '/project_template/build/helloworld.js'
@@ -20,8 +23,30 @@
     </script>
 
     <h2>Types in TypeScript</h2>
+    <p>TypeScript is a strongly typed language, meaning variables' types don't change. The TypeScript equivalent of foo from earlier might look something like <code>function foo(x: number) { return (1 + x); }</code>. Since foo now only takes numbers for x, foo will always receive and return a number, which is much more predictable.</p>
+    <p>TypeScript can infer the type of a variable, or you can explicitly give a type. For example, <code>let x = "one"</code> and <code>let x: string = "one"</code> both do the same thing.</p>
+    <p>You can also define types. The following example defines Student as a type with an email (string) and studentid (number):</p>
+    <code>interface Student {<br>
+        &emsp;email: string;<br>
+        &emsp;studentid: number;<br>
+    }
+    </code>
+
     <h2>Structural Type System</h2>
+    <p>Type checking in TypeScript considers the "shape" of values. If an object has the same "shape" as another object, it is considered to be of the same type. The object person1 in the example below is compatible with the type Student because it has the same "shape", and can be passed into functions requiring an object of type Student despite never being declared as a Student.</p>
+    <code>interface Student {<br>
+        &emsp;email: string;<br>
+        &emsp;studentid: number;<br>
+    }<br>
+    function getId(Student s) {<br>
+        &emsp;return s.studentid;<br>
+    }<br>
+    const person1 = { email: "jimmy@website.com", studentid: 12345 };<br>
+    getId(person1);
+    </code>
+
     <h2>More Resources</h2>
+    <p>For more info on TypeScript, check out the <a href="https://www.typescriptlang.org/docs/handbook/">official TypeScript documentation</a> or <a href="https://www.w3schools.com/typescript/">W3School's tutorial on TypeScript</a>.</p>
 </body>
 
 </html>
